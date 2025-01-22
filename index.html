@@ -1,57 +1,51 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 
 <head>
-    <meta chatset = "UFT-8">
-    <meta name = "viewpoint" content = "width=device-width, initial-scale = 1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TestSystem</title>
-
-    <link rel = "stylesheet" href = "index.css">
-    <script src = "index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
 </head>
 
 <body>
-    <h1>Job Listings Test</h1>
-
+    <h1>Admin Dashboard Demo</h1>
 
     <!-- Login Section -->
-    <div id = "loginArea">
-        <label for = "username">Enter Username: </label>
-        <input type = "text" id = "username" placeholder = "Enter Your Username">
+    <div id="loginArea">
+        <label for="username">Enter Username: </label>
+        <input type="text" id="username" placeholder="Enter Your Username">
 
-        <label for = "password">Enter Password: </label>
-        <input type = "text" id = "password" placeholder = "Enter Your Password">
-        <button id = "loginButton">Login</button>
+        <label for="password">Enter Password: </label>
+        <input type="text" id="password" placeholder="Enter Your Password">
+        <button id="loginButton">Login</button>
     </div>
 
-    <!-- Listings -->
-    <div id = "job1" class = "job">
-        <h2>Job Title 1</h2>
-        <p>Job Description...</p>
-    </div>
-
-    <div id = "job2" class = "job">
-        <h2>Job Title 2</h2>
-        <p>Job Description...</p>
-    </div>
-
-    <!-- Administation Controls -->
-    <div id = "adminControls" class = "admin-controls">
-        <div class = "header" id = "adminControlsHeader">
-            <h3>Admin Controls</h3>
+    <!-- Administration Controls -->
+    <div id="adminControls" class="admin-controls">
+        <div class="header" id="adminControlsHeader">
+            <h3>Admin Control Panel</h3>
         </div>
 
-        <label>
-            <input type="checkbox" id="toggleJob1">
-            Show Job 1
-        </label>
-        
-        <label>
-            <input type="checkbox" id="toggleJob2">
-            Show Job 2
-        </label>
-    </div> 
-    
+        <p>Currently, there are no controls for this . <br/><br/>However, this panel is here to represent the possibilities of having admin specific controls. On the page, there is a demo of a particular functionality.</p>
+    </div>
+
+    <!-- Text Explanation -->
+    <div id="benefitsText" style="display: none;">
+        <h2>Why a Hidden Login Menu?</h2>
+        <p>Having a hidden login menu on a public webpage offers several benefits, such as:</p>
+        <ul>
+            <li><strong>Enhanced Security:</strong> By hiding the login menu, unauthorized users cannot access the admin controls directly, keeping sensitive data protected.</li>
+            <li><strong>Cleaner Interface:</strong> The login option is only visible when needed, reducing clutter on the page for regular visitors.</li>
+            <li><strong>User Control:</strong> The hidden login feature provides a clean user experience, where the login is accessible only by the correct keyboard shortcut (e.g., Ctrl+Z).</li>
+            <li><strong>Prevention of Automated Attacks:</strong> Hidden login forms are less likely to be targeted by automated bots, reducing potential cyber attacks that utilise a brute force methodolgy.</li>
+        </ul>
+        <p>Overall, this method enhances user experience and maintains a secure interface for administrators.</p>
+    </div>
+
+    <!-- Next Page Button-->
+    <button id="nextPageButton" onclick="window.location.href='jobListing.html'">Go To Next Page</button>
+
 </body>
 </html>

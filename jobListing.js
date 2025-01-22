@@ -6,13 +6,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginArea = document.getElementById("loginArea");
     const loginButton = document.getElementById("loginButton");
     const adminControls = document.getElementById("adminControls");
-    const benefitsText = document.getElementById("benefitsText");
+    const toggleJob1 = document.getElementById("toggleJob1");
+    const toggleJob2 = document.getElementById("toggleJob2");
+    const job1 = document.getElementById("job1");
+    const job2 = document.getElementById("job2");
 
     let loginVisible = false;
 
     // Hide Admin Controls & Log In
     adminControls.style.display = "none";
     loginArea.style.display = "none";
+
+    // Load Visibility
+    const job1Visible = localStorage.getItem('toggleJob1') === 'true';
+    const job2Visible = localStorage.getItem('toggleJob2') === 'true';
+
+    // Set Toggle State
+    toggleJob1.checked = job1Visible;
+    toggleJob2.checked = job2Visible;
+
+    job1.style.display = job1Visible ? "block" : "none";
+    job2.style.display = job2Visible ? "block" : "none";
 
     async function hashString(str) {
         const encoder = new TextEncoder();
@@ -42,6 +56,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const enteredUsername = document.getElementById("username").value;
         const enteredPassword = document.getElementById("password").value;
 
+
+        /*
+        // Log Entered Detailed
+        console.log("Entered Username: ", enteredUsername);
+        console.log("Entered Password: ", enteredPassword);
+
+        // Output Hash
+        console.log("Entered Username Hash: ", enteredUsernameHash);
+        console.log("Entered Password Hash: ", enteredPasswordHash);
+        */
+
         // Hash The Creds
         const enteredUsernameHash = await hashString(enteredUsername);
         const enteredPasswordHash = await hashString(enteredPassword);
@@ -49,35 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
         // Compare Creds
         if (enteredUsernameHash === usernameHash && enteredPasswordHash === passwordHash) {
             alert("Login successful");
-
-            // Show Admin Controls
             adminControls.style.display = "block";
             loginArea.style.display = "none";
-
-            benefitsText.style.display = "block"; // Show the benefits text
 
             // Logout Visuals
             const logoutButton = document.createElement("button");
             logoutButton.textContent = "Logout";
+            logoutButton.style.marginLeft = "10px";
             document.body.appendChild(logoutButton);
-
-            // Styling for the Logout Button
-            logoutButton.style.position = "fixed";
-            logoutButton.style.bottom = "20px";  // Position at the footer
-            logoutButton.style.left = "50%";
-            logoutButton.style.transform = "translateX(-50%)";  // Center it horizontally
-            logoutButton.style.backgroundColor = "#dc3545";
-            logoutButton.style.color = "white";
-            logoutButton.style.padding = "10px 20px";
-            logoutButton.style.border = "none";
-            logoutButton.style.borderRadius = "5px";
-            logoutButton.style.cursor = "pointer";
-            logoutButton.style.zIndex = "1000";  // Ensure it appears above other elements
 
             logoutButton.addEventListener("click", () => {
                 adminControls.style.display = "none";
                 loginArea.style.display = "none";
-                benefitsText.style.display = "none";
                 loginVisible = false;
                 logoutButton.remove();
                 alert("You have been logged out.");
@@ -85,6 +93,19 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             alert("Incorrect username or password");
         }
+    });
+
+    // Toggle & Save Job Visuals
+    toggleJob1.addEventListener("change", (event) => {
+        const isVisible = event.target.checked;
+        job1.style.display = isVisible ? "block" : "none";
+        localStorage.setItem('toggleJob1', isVisible); // Save
+    });
+
+    toggleJob2.addEventListener("change", (event) => {
+        const isVisible = event.target.checked;
+        job2.style.display = isVisible ? "block" : "none";
+        localStorage.setItem('toggleJob2', isVisible); // Save
     });
 
     // Dragging Admin
