@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Admin credentials
     const username = "GOODWIN";
     const password = "D1sc011ama";
     const loginArea = document.getElementById("loginArea");
@@ -16,14 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     loginArea.style.display = "none";
 
     // Load job visibility states from localStorage
-    const job1Visible = localStorage.getItem('toggleJob1') === 'true';
+    const job1Visible = localStorage.getItem('toggleJob1') === 'true'; // 'true' or 'false' as string
     const job2Visible = localStorage.getItem('toggleJob2') === 'true';
 
     // Set the toggle state based on the stored values
     toggleJob1.checked = job1Visible;
     toggleJob2.checked = job2Visible;
 
-    // Set job visibility based on the stored values
+    // Set job visibility based on the stored values from localStorage
     job1.style.display = job1Visible ? "block" : "none";
     job2.style.display = job2Visible ? "block" : "none";
 
@@ -69,17 +70,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Toggle Job Visibility
+    // Toggle Job Visibility and Save State
     toggleJob1.addEventListener("change", (event) => {
         job1.style.display = event.target.checked ? "block" : "none";
-        // Save the state to localStorage
-        localStorage.setItem('toggleJob1', event.target.checked);
+        localStorage.setItem('toggleJob1', event.target.checked); // Save visibility state in localStorage
     });
 
     toggleJob2.addEventListener("change", (event) => {
         job2.style.display = event.target.checked ? "block" : "none";
-        // Save the state to localStorage
-        localStorage.setItem('toggleJob2', event.target.checked);
+        localStorage.setItem('toggleJob2', event.target.checked); // Save visibility state in localStorage
     });
 
     // Dragging functionality for Admin Controls
