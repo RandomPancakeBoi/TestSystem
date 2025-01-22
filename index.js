@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Admin credentials (obfuscated)
     const username = "GOODWIN";
-    const password = "D1sc011ama"; // Store password obfuscated in base64 (can be decoded)
+    const password = "D1sc011ama";
     const loginArea = document.getElementById("loginArea");
     const loginButton = document.getElementById("loginButton");
     const adminControls = document.getElementById("adminControls");
@@ -15,6 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Hide admin controls and login panel initially
     adminControls.style.display = "none";
     loginArea.style.display = "none";
+
+    // Load job visibility states from localStorage
+    const job1Visible = localStorage.getItem('toggleJob1') === 'true';
+    const job2Visible = localStorage.getItem('toggleJob2') === 'true';
+
+    // Set the toggle state based on the stored values
+    toggleJob1.checked = job1Visible;
+    toggleJob2.checked = job2Visible;
+
+    // Set job visibility based on the stored values
+    job1.style.display = job1Visible ? "block" : "none";
+    job2.style.display = job2Visible ? "block" : "none";
 
     // Toggle Login Menu on Ctrl + Z
     document.addEventListener("keydown", (event) => {
@@ -40,10 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
             adminControls.style.display = "block";
             loginArea.style.display = "none";
 
-            // Load visibility preferences from localStorage
-            toggleJob1.checked = localStorage.getItem('toggleJob1') === 'true';
-            toggleJob2.checked = localStorage.getItem('toggleJob2') === 'true';
-
             // Add logout button
             const logoutButton = document.createElement("button");
             logoutButton.textContent = "Logout";
@@ -65,11 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Toggle Job Visibility
     toggleJob1.addEventListener("change", (event) => {
         job1.style.display = event.target.checked ? "block" : "none";
+        // Save the state to localStorage
         localStorage.setItem('toggleJob1', event.target.checked);
     });
 
     toggleJob2.addEventListener("change", (event) => {
         job2.style.display = event.target.checked ? "block" : "none";
+        // Save the state to localStorage
         localStorage.setItem('toggleJob2', event.target.checked);
     });
 
