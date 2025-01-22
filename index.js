@@ -72,13 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Toggle Job Visibility and Save State
     toggleJob1.addEventListener("change", (event) => {
-        job1.style.display = event.target.checked ? "block" : "none";
-        localStorage.setItem('toggleJob1', event.target.checked); // Save visibility state in localStorage
+        const isVisible = event.target.checked;
+        job1.style.display = isVisible ? "block" : "none";
+        localStorage.setItem('toggleJob1', isVisible); // Save visibility state in localStorage
     });
 
     toggleJob2.addEventListener("change", (event) => {
-        job2.style.display = event.target.checked ? "block" : "none";
-        localStorage.setItem('toggleJob2', event.target.checked); // Save visibility state in localStorage
+        const isVisible = event.target.checked;
+        job2.style.display = isVisible ? "block" : "none";
+        localStorage.setItem('toggleJob2', isVisible); // Save visibility state in localStorage
     });
 
     // Dragging functionality for Admin Controls
