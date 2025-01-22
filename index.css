@@ -91,7 +91,7 @@ h1 {
     display: block;
 }
 
-/* Hide login area on mobile */
+/* Hide Log In Panel On Mobile */
 @media (max-width: 768px) {
     #loginArea {
         display: none;
