@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('toggleJob2', isVisible); // Save
     });
 
-    // Dragging Admin Panel
+    // Dragging Admin
     let isDragging = false;
     let offsetX = 0;
     let offsetY = 0;

@@ -60,9 +60,9 @@ h1 {
     width: 300px;
     border-radius: 8px;
     display: none;
-    position: absolute;
-    top: 10%;
-    left: 10%;
+    position: fixed; /* Change to fixed positioning */
+    top: 10%; /* Position at top-right by default */
+    right: 10%; /* Align it to the right side */
     z-index: 999;
     cursor: move;
 }
@@ -91,7 +91,25 @@ h1 {
     display: block;
 }
 
-/* Hide Log In Panel On Mobile */
+/* Logout Button */
+#logoutButton {
+    position: fixed;
+    bottom: 10px;  /* Align to the bottom */
+    left: 10px;    /* Align to the left */
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+#logoutButton:hover {
+    background-color: #c82333;
+}
+
+/* Hide login area on mobile */
 @media (max-width: 768px) {
     #loginArea {
         display: none;
