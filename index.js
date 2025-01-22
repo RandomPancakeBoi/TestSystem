@@ -110,4 +110,18 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("mouseup", () => {
         isDragging = false;
     });
+
+
+    // Password Toggle Switch
+    const togglePassowrd = document.getElementById('togglePassword');
+    const passwordField = document.getElementById('password');
+
+    togglePassowrd.addEventListener('click', () => {
+        // Toggle The Type Between Password And Text
+        const type = passwordField.type === 'password' ? 'text' : 'password';
+        passwordField.type = type;
+
+        // Change Eye Icon To Show The State
+        togglePassowrd.textContent = type === 'password' ? '👁️' : '🙈';
+    })
 });

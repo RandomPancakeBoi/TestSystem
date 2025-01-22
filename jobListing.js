@@ -83,6 +83,19 @@ document.addEventListener("DOMContentLoaded", () => {
             logoutButton.style.marginLeft = "10px";
             document.body.appendChild(logoutButton);
 
+            // Styling for the Logout Button
+            logoutButton.style.position = "fixed";
+            logoutButton.style.bottom = "20px";  // Position at the footer
+            logoutButton.style.left = "50%";
+            logoutButton.style.transform = "translateX(-50%)";  // Center it horizontally
+            logoutButton.style.backgroundColor = "#dc3545";
+            logoutButton.style.color = "white";
+            logoutButton.style.padding = "10px 20px";
+            logoutButton.style.border = "none";
+            logoutButton.style.borderRadius = "5px";
+            logoutButton.style.cursor = "pointer";
+            logoutButton.style.zIndex = "1000";  // Ensure it appears above other elements
+
             logoutButton.addEventListener("click", () => {
                 adminControls.style.display = "none";
                 loginArea.style.display = "none";
@@ -131,4 +144,18 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("mouseup", () => {
         isDragging = false;
     });
+
+
+    // Password Toggle Switch
+    const togglePassowrd = document.getElementById('togglePassword');
+    const passwordField = document.getElementById('password');
+
+    togglePassowrd.addEventListener('click', () => {
+        // Toggle The Type Between Password And Text
+        const type = passwordField.type === 'password' ? 'text' : 'password';
+        passwordField.type = type;
+
+        // Change Eye Icon To Show The State
+        togglePassowrd.textContent = type === 'password' ? '👁️' : '🙈';
+    })
 });
