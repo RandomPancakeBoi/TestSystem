@@ -1,0 +1,99 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Login Area */
+#loginArea {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    border-radius: 8px;
+    display: none;
+    z-index: 1000;
+}
+
+#loginArea label {
+    font-weight: bold;
+}
+
+#loginArea input {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#loginArea button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#loginArea button:hover {
+    background-color: #218838;
+}
+
+/* Admin Controls */
+.admin-controls {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px auto;
+    width: 300px;
+    border-radius: 8px;
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 999;
+    cursor: move;
+}
+
+.admin-controls .header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: move;
+}
+
+.admin-controls label {
+    display: block;
+    margin: 10px 0;
+}
+
+/* Job Listings */
+.job {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Hide login area on mobile */
+@media (max-width: 768px) {
+    #loginArea {
+        display: none;
+    }
+}

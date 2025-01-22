@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta chatset = "UFT-8">
+    <meta name = "viewpoint" content = "width=device-width, initial-scale = 1.0">
+
+    <title>TestSystem</title>
+
+    <link rel = "stylesheet" href = "index.css">
+    <script src = "index.js"></script>
+</head>
+
+<body>
+    <h1>Job Listings</h1>
+
+
+    <!-- Login Section -->
+    <div id = "loginArea">
+        <label for = "username">Enter Username: </label>
+        <input type = "text" id = "username" placeholder = "Enter Your Username">
+
+        <label for = "password">Enter Password: </label>
+        <input type = "text" id = "password" placeholder = "Enter Your Password">
+        <button id = "loginButton">Login</button>
+    </div>
+
+    <!-- Listings -->
+    <div id = "job1" class = "job">
+        <h2>Job Title 1</h2>
+        <p>Job Description...</p>
+    </div>
+
+    <div id = "job2" class = "job">
+        <h2>Job Title 2</h2>
+        <p>Job Description...</p>
+    </div>
+
+    <!-- Administation Controls -->
+    <div id = "adminControls" class = "admin-controls">
+        <div class = "header" id = "adminControlsHeader">
+            <h3>Admin Controls</h3>
+        </div>
+
+        <label>
+            <input type="checkbox" id="toggleJob1">
+            Show Job 1
+        </label>
+        
+        <label>
+            <input type="checkbox" id="toggleJob2">
+            Show Job 2
+        </label>
+    </div> 
+    
+</body>
+</html>
