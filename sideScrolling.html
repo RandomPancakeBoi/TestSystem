@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta chatset = "UFT-8">
+    <meta name = "viewpoint" content = "width=device-width, initial-scale = 1.0">
+
+    <title>TestSystem</title>
+
+    <link rel = "stylesheet" href = "sideScrolling.css">
+    <script src = "sideScrolling.js"></script>
+</head>
+
+<body>
+    <h1>Scrolling Images & Text Demo</h1>
+
+
+    <!-- Login Section -->
+    <div id = "loginArea">
+        <label for = "username">Enter Username: </label>
+        <input type = "text" id = "username" placeholder = "Enter Your Username">
+
+        <label for="password">Enter Password: </label>
+        <div style="position: relative;">
+            <input type="password" id="password" placeholder="Enter Your Password">
+            <span id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                👁️
+            </span>
+        </div>
+        <button id = "loginButton">Login</button>
+    </div>
+
+    <!-- Image Panels -->
+
+    <!-- Administation Controls -->
+    <div id = "adminControls" class = "admin-controls">
+        <div class = "header" id = "adminControlsHeader">
+            <h3>Admin Controls</h3>
+        </div>
+    </div> 
+
+    <!-- Page Buttons -->
+    <button id="nextPageButton" onclick="window.location.href='index.html'">Next Page</button>
+    <button id="prevPageButton" onclick="window.location.href='jobListing.html'">Previous Page</button>
+    
+</body>
+</html>

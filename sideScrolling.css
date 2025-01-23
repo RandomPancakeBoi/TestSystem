@@ -60,9 +60,9 @@ h1 {
     width: 300px;
     border-radius: 8px;
     display: none;
-    position: fixed; /* Change to fixed positioning */
-    top: 10%; /* Position at top-right by default */
-    right: 10%; /* Align it to the right side */
+    position: fixed;
+    top: 10%;
+    right: 10%;
     z-index: 999;
     cursor: move;
 }
@@ -94,19 +94,67 @@ h1 {
 /* Logout Button */
 #logoutButton {
     position: fixed;
-    bottom: 10px;  /* Align to the bottom */
-    left: 10px;    /* Align to the left */
+    bottom: 10px;
+    left: 10px;
     background-color: #dc3545;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    z-index: 1000; /* Ensure it's above other elements */
+    z-index: 1000;
 }
 
 #logoutButton:hover {
     background-color: #c82333;
+}
+
+/* Text explanation and image */
+#benefitsText {
+    display: none;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;  /* Adjusted for better readability with image */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    z-index: 999;
+    display: flex;  /* Use flexbox for layout */
+    justify-content: space-between;  /* Ensure content is spaced out */
+    align-items: flex-start;
+}
+
+#benefitsText h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #007BFF;  /* Blue color for the heading */
+}
+
+#benefitsText p {
+    margin-bottom: 15px;
+}
+
+#benefitsText ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+#benefitsText ul li {
+    margin-bottom: 10px;
+}
+
+/* Image styles */
+#benefitsImage {
+    max-width: 350px;  /* Set a maximum width for the image */
+    height: auto;  /* Maintain aspect ratio */
+    border-radius: 12px;  /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Slight shadow for the image */
 }
 
 /* "Go to Next Page" Button */
